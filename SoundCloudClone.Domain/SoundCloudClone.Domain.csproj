@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Streaming\" />
-    <Folder Include="Transacao\" />
-  </ItemGroup>
-
 </Project>
