@@ -5,21 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoundCloudClone.Domain.Conta
+namespace SoundCloudClone.Domain.Transacao
 {
     public class Cartao
     {
         private Guid Id { get; set; }
-        private Boolean Ativo { get; set; }
-        private Decimal Limite { get; set; }
+        private bool Ativo { get; set; }
+        private decimal Limite { get; set; }
         private List<Transacao> Transacoes { get; set; } = new List<Transacao>();
         private const int TEMPO_INTERVALO_TRANSACAO = -2;
         private const int TRANSACAO_REPETIDA = 1;
-        public void CriarTransacao(String vendedor, decimal valor, string descricao)
+        public void CriarTransacao(string vendedor, decimal valor, string descricao)
         {
             CartaoException validationErrors = new CartaoException();
 
-            this.IsCartaoAtivo(validationErrors);
+            IsCartaoAtivo(validationErrors);
 
             Transacao transacao = new Transacao();
             transacao.Vendedor = vendedor;
@@ -27,22 +27,22 @@ namespace SoundCloudClone.Domain.Conta
             transacao.Descricao = descricao;
             transacao.Data = DateTime.Now;
 
-            this.VerificarLimiteDisponivel(transacao, validationErrors);
+            VerificarLimiteDisponivel(transacao, validationErrors);
 
-            this.ValidarTransacao(transacao, validationErrors);
+            ValidarTransacao(transacao, validationErrors);
 
             validationErrors.ValidateAndThrow();
 
             transacao.Id = Guid.NewGuid();
 
-            this.Limite = this.Limite - transacao.Valor;
+            Limite = Limite - transacao.Valor;
 
-            this.Transacoes.Add(transacao);
+            Transacoes.Add(transacao);
         }
 
         private void IsCartaoAtivo(CartaoException validationErrors)
         {
-            if (this.Ativo == false)
+            if (Ativo == false)
             {
                 validationErrors.AddError(new Core.Exceptions.BusinessValidation()
                 {
@@ -54,7 +54,7 @@ namespace SoundCloudClone.Domain.Conta
 
         private void VerificarLimiteDisponivel(Transacao transacao, CartaoException validationErrors)
         {
-            if (transacao.Valor > this.Limite)
+            if (transacao.Valor > Limite)
             {
                 validationErrors.AddError(new Core.Exceptions.BusinessValidation()
                 {
@@ -66,7 +66,7 @@ namespace SoundCloudClone.Domain.Conta
 
         private void ValidarTransacao(Transacao transacao, CartaoException validationErrors)
         {
-            var ultimasTransacao = this.Transacoes.Where(transacao => transacao.Data >= DateTime.Now.AddMinutes(TEMPO_INTERVALO_TRANSACAO));
+            var ultimasTransacao = Transacoes.Where(transacao => transacao.Data >= DateTime.Now.AddMinutes(TEMPO_INTERVALO_TRANSACAO));
 
             if (ultimasTransacao?.Count() >= 3)
             {
@@ -78,7 +78,7 @@ namespace SoundCloudClone.Domain.Conta
             }
 
             var transacaoRepetida = ultimasTransacao.Where(transacao => transacao.Vendedor.ToUpper() == transacao.Vendedor.ToUpper() && transacao.Valor == transacao.Valor).Count() == TRANSACAO_REPETIDA;
-        
+
             if (transacaoRepetida)
             {
                 validationErrors.AddError(new Core.Exceptions.BusinessValidation()

@@ -9,11 +9,11 @@ namespace SoundCloudClone.Domain.Conta
 {
     public class Playlist
     {
-        private Guid Id { get; set; }
-        private string Nome { get; set; }
-        private bool Publica { get; set; }
-        private Usuario Usuario { get; set; }
-        private List<Musica> Musicas { get; set; }
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public bool Publica { get; set; }
+        public Usuario Usuario { get; set; }
+        public List<Musica> Musicas { get; set; }
         public Playlist()
         {
             Musicas = new List<Musica>();

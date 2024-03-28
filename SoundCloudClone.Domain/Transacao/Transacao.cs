@@ -8,5 +8,10 @@ namespace SoundCloudClone.Domain.Transacao
 {
     public class Transacao
     {
+        public Guid Id { get; set; }
+        public DateTime Data { get; set; }
+        public Decimal Valor { get; set; }
+        public String Vendedor { get; set; }
+        public String Descricao { get; set; }
     }
 }
