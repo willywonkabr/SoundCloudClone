@@ -5,7 +5,13 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundCloudClone.Domain", "SoundCloudClone.Domain\SoundCloudClone.Domain.csproj", "{B010AF40-CEF4-4DAF-90B6-E71D3B2B5435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloudClone.Repository", "SoundCloudClone.Repository\SoundCloudClone.Repository.csproj", "{8D88F9B2-11DB-45F3-802F-F7E19166851D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoundCloudClone.Repository", "SoundCloudClone.Repository\SoundCloudClone.Repository.csproj", "{8D88F9B2-11DB-45F3-802F-F7E19166851D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloudClone.Notification", "SoundCloudClone.Notification\SoundCloudClone.Notification.csproj", "{0F0F58F5-E49D-4DF2-B7D5-D63CB8A4F1E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloudClone.Application", "SoundCloudClone.Application\SoundCloudClone.Application.csproj", "{F19DD840-E5B7-4379-9EEA-8261708FBAD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundCloudClone.API", "SoundCloudClone.API\SoundCloudClone.API.csproj", "{F4A9E245-71E8-4EE4-8198-746AB89994BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{8D88F9B2-11DB-45F3-802F-F7E19166851D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D88F9B2-11DB-45F3-802F-F7E19166851D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D88F9B2-11DB-45F3-802F-F7E19166851D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0F58F5-E49D-4DF2-B7D5-D63CB8A4F1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0F58F5-E49D-4DF2-B7D5-D63CB8A4F1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0F58F5-E49D-4DF2-B7D5-D63CB8A4F1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0F58F5-E49D-4DF2-B7D5-D63CB8A4F1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19DD840-E5B7-4379-9EEA-8261708FBAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19DD840-E5B7-4379-9EEA-8261708FBAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19DD840-E5B7-4379-9EEA-8261708FBAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19DD840-E5B7-4379-9EEA-8261708FBAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A9E245-71E8-4EE4-8198-746AB89994BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A9E245-71E8-4EE4-8198-746AB89994BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A9E245-71E8-4EE4-8198-746AB89994BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A9E245-71E8-4EE4-8198-746AB89994BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
