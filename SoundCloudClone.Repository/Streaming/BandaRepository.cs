@@ -23,7 +23,7 @@ namespace SoundCloudClone.Repository.Streaming
         {
             string url = $"/musicas/{idMusica}";
 
-            HttpClient httpClient = _httpClientFactory.CreateHttpClient("SoundCloudApiServer");
+            HttpClient httpClient = _httpClientFactory.CreateClient("SoundCloudApiServer");
 
             var response = httpClient.GetAsync(url).Result;
 
