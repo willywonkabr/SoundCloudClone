@@ -67,6 +67,19 @@ namespace SoundCloudClone.Application.Conta
             this.usuarioRepository.Update(usuario);
         }
 
+        public void DesfavoritarMusica(Guid id, Guid idMusica)
+        {
+            var usuario = this.usuarioRepository.ObterUsuario(id);
+
+            if (usuario == null) throw new Exception("Usuário não encontrado");
+
+            var musica = VerificarMusica(idMusica);
+
+            usuario.DesfavoritarMusica(musica);
+
+            this.usuarioRepository.Update(usuario);
+        }
+
         private Musica VerificarMusica(Guid idMusica)
         {
             var musica = this.bandaRepository.ObterMusica(idMusica);

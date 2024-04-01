@@ -10,7 +10,7 @@ namespace SoundCloudClone.API.Response
     {
         public Guid Id { get ; set; }
         public string Nome { get; set; }
-        public Guid PlnaoId { get; set; }
+        public Guid PlanoId { get; set; }
 
         public List<PlaylistResponse> Playlists { get; set; } = new List<PlaylistResponse>();
     }

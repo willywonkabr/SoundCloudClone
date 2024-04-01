@@ -9,10 +9,11 @@ namespace SoundCloudClone.Domain.Transacao
 {
     public class Cartao
     {
-        private Guid Id { get; set; }
-        private bool Ativo { get; set; }
-        private decimal Limite { get; set; }
-        private List<Transacao> Transacoes { get; set; } = new List<Transacao>();
+        public Guid Id { get; set; }
+        public bool Ativo { get; set; }
+        public decimal Limite { get; set; }
+        public String Numero { get; set; }
+        public List<Transacao> Transacoes { get; set; } = new List<Transacao>();
         private const int TEMPO_INTERVALO_TRANSACAO = -2;
         private const int TRANSACAO_REPETIDA = 1;
         public void CriarTransacao(string vendedor, decimal valor, string descricao)
