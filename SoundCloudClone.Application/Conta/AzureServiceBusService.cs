@@ -9,7 +9,7 @@ namespace SoundCloudClone.Application.Conta
 {
     public class AzureServiceBusService
     {
-        //private string ConnectionString = "Endpoint=";
+        //private string ConnectionString = "Endpoint=sb://soundcloudclone.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tOAXH7A9WWR29NuiNZqCDT939o8QA79FG+ASbG3PKXI=";
 
         public AzureServiceBusService() { }
 

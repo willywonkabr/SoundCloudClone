@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 
-//string ConnectionString = "Endpoint";
+//string ConnectionString = "Endpoint=sb://soundcloudclone.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=tOAXH7A9WWR29NuiNZqCDT939o8QA79FG+ASbG3PKXI=";
 
 //ServiceBusClient client;
 //ServiceBusProcessor processor;
