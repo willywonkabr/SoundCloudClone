@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.2" />
+	  <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="8.0.2" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SoundCloudClone.Application\SoundCloudClone.Application.csproj" />
+    <ProjectReference Include="..\SoundCloudClone.Domain\SoundCloudClone.Domain.csproj" />
+    <ProjectReference Include="..\SoundCloudClone.Repository\SoundCloudClone.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

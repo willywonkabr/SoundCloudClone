@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using SoundCloudClone.API.Request;
-using SoundCloudClone.API.Response;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using SoundCloudClone.Application.Conta;
-using SoundCloudClone.Domain.Conta;
+using SoundCloudClone.API.Request;
 using SoundCloudClone.Domain.Transacao;
+using SoundCloudClone.API.Response;
+using SoundCloudClone.Domain.Conta;
 
 namespace SoundCloudClone.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : Controller
+    public class UsuarioController : ControllerBase
     {
         private UsuarioService usuarioService;
 
@@ -22,7 +27,7 @@ namespace SoundCloudClone.API.Controllers
         [HttpPost]
         public IActionResult Criar(CriarUsuarioRequest request)
         {
-            if (ModelState.IsValid == false) return BadRequest();
+            if(ModelState.IsValid == false) return BadRequest();
 
             Cartao cartao = new Cartao()
             {

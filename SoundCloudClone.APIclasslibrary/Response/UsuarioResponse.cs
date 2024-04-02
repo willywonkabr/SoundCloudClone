@@ -1,8 +1,14 @@
-﻿namespace SoundCloudClone.API.Response
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoundCloudClone.API.Response
 {
     public class UsuarioResponse
     {
-        public Guid Id { get; set; }
+        public Guid Id { get ; set; }
         public string Nome { get; set; }
         public Guid PlanoId { get; set; }
 
@@ -13,7 +19,7 @@
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
-        public List<MusicaResponse> Musica { get; set; } = new List<MusicaResponse>();
+        public List<MusicaResponse> Musica { get; set; } = new List<MusicaResponse>();   
     }
 
     public class MusicaResponse
