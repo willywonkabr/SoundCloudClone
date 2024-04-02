@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Polly.Registry;
+using SoundCloudClone.API;
 using SoundCloudClone.Application.Conta;
 using SoundCloudClone.Repository;
 using SoundCloudClone.Repository.Conta;
@@ -26,13 +25,13 @@ builder.Services.AddDbContext<SoundCloudContext>(database =>
     database.UseInMemoryDatabase("SoundCloudDatabase");
 });
 
-var app = builder.Build();
-
 builder.Services.AddScoped<UsuarioRepository>();
 builder.Services.AddScoped<BandaRepository>();
 builder.Services.AddScoped<PlanoRepository>();
 
 builder.Services.AddScoped<UsuarioService>();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
